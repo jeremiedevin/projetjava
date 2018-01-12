@@ -29,7 +29,7 @@ public class Game
   final static Color COLOURTWO = new Color(0,0,0,200);
   final static Color COLOURTWOTXT = new Color(255,100,255);
   final static int EMPTY = 0;
-  final static int BSIZE = 12; // board size.
+  final static int BSIZE = 16; // board size.
   final static int HEXSIZE = 60;	//hex size in pixels
   final static int BORDERS = 15;
   final static int SCRSIZE = HEXSIZE * (BSIZE + 1) + BORDERS*3; //screen size (vertical dimension).
@@ -55,6 +55,7 @@ public class Game
     board[3][3] = (int)'A';
     board[4][3] = (int)'Q';
     board[4][4] = -(int)'B';
+
   }
 
   private void createAndShowGUI()
