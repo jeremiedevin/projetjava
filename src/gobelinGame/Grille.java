@@ -20,12 +20,12 @@ public class Grille
   //Constantes
   public final static boolean orFLAT= true;
   public final static boolean orPOINT= false;
-  public static boolean ORIENT= orFLAT;  // non utilis�
+  public static boolean ORIENT= orFLAT;  // non utilisé
 
   public static boolean XYVertex=true;	// true: x,y sont les coordonn�es du premier vertex. // false: x,y sont les cooronn�s du rectangle en au � gauche
   //false: x,y are the co-ords of the top left rect. co-ord.
 
-  private static int BORDERS=50;	// nombre d�faut de pixels du border.
+  private static int BORDERS=50;	// nombre défaut de pixels du border.
 
   private static int s=0;	// length of one side
   private static int t=0;	// short side of 30o triangle outside of each hex
@@ -88,8 +88,8 @@ public class Grille
 
   public void drawHex(int i, int j, Graphics2D g2) {
 
-    ImageIcon igh= new ImageIcon(getClass().getResource("img/map.png"));
-    Image img = igh.getImage();
+    ImageIcon imagebackground= new ImageIcon(getClass().getResource("img/map.png"));
+    Image img = imagebackground.getImage();
     g2.drawImage(img,0,0,1300,1000,null);
 
     int x = i * (s+t);
