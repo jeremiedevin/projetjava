@@ -2,7 +2,7 @@ package gobelinGame;
 
 public class Pion {
 
-  public static void main(String arg[]){
+  public static void Pion(String arg[]){
 
   }
 }

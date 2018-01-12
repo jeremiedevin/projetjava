@@ -40,7 +40,7 @@ public class Game
 
   void initGame(){
 
-    Grille.setXYasVertex(false); //recommandation du net : laisser à FALSE.
+    Grille.setXYasVertex(false); //recommandation du net : laisser ï¿½ FALSE.
 
     Grille.setHeight(HEXSIZE);
     Grille.setBorders(BORDERS);
