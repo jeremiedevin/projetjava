@@ -30,17 +30,19 @@ public class Game
   final static int BSIZE = 12; // board size.
   final static int HEXSIZE = 60;	//hex size in pixels
   final static int BORDERS = 15;
-  final static int SCRSIZE = HEXSIZE * (BSIZE + 1) + BORDERS*3; //screen size (vertical dimension).
+  final static int SCRSIZE = HEXSIZE * (BSIZE + 4) + BORDERS*3; //screen size (vertical dimension).
 
   Grille Grille = new Grille();
+
+  Pion Pion = new Pion();
 
   int[][] board = new int[BSIZE][BSIZE];
 
   void initGame(){
 
-    Grille.setXYasVertex(false); //recommandation du net : laisser � FALSE.
+    Grille.setXYasVertex(false); //recommandation du net : laisser à FALSE.
 
-    Grille.setHeight(HEXSIZE);
+    Grille.setHeight(HEXSIZE*2);
     Grille.setBorders(BORDERS);
 
     for (int i=0;i<BSIZE;i++) {
@@ -51,7 +53,6 @@ public class Game
 
     //set up board here
     board[3][3] = (int)'A';
-    board[4][3] = (int)'Q';
     board[4][4] = -(int)'B';
   }
 
@@ -60,19 +61,17 @@ public class Game
     DrawingPanel panel = new DrawingPanel();
 
 
-    JFrame frame = new JFrame("Goblin Game");
+    JFrame frame = new JFrame("Gobelin Game");
     frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
     Container content = frame.getContentPane();
     content.add(panel);
     //this.add(panel);  // impossible si context static
 
 
-    /** a revoir */
-    frame.setSize( (int)(SCRSIZE*0.8), SCRSIZE); // donner la taille via la constante
-    //System.out.print(java.awt.Frame.MAXIMIZED_BOTH); // Redimensionner la fenetre
+    /** a revoir --> taille de la fenêtre */
+    frame.setSize( (int)(SCRSIZE*1.9), SCRSIZE); // donner la taille via la constante
 
-
-    frame.setResizable(false);
+    frame.setResizable(true);
     frame.setLocationRelativeTo( null );
     frame.setVisible(true);
   }
@@ -106,14 +105,11 @@ public class Game
 
       for (int i=0;i<BSIZE;i++) {
         for (int j=0;j<BSIZE;j++) {
-          //if (board[i][j] < 0) Grille.fillHex(i,j,COLOURONE,-board[i][j],g2);
-          //if (board[i][j] > 0) Grille.fillHex(i,j,COLOURTWO, board[i][j],g2);
           Grille.fillHex(i,j,board[i][j],g2);
         }
       }
 
       //g.setColor(Color.RED);
-      //g.drawLine(mPt.x,mPt.y, mPt.x,mPt.y);
     }
 
     class MyMouseListener extends MouseAdapter	{
@@ -123,11 +119,14 @@ public class Game
         //mPt.x = x;
         //mPt.y = y;
         Point p = new Point( Grille.pxtoHex(e.getX(),e.getY()) );
+
         if (p.x < 0 || p.y < 0 || p.x >= BSIZE || p.y >= BSIZE) return;
 
         // action au clic sur la tuile
-        board[p.x][p.y] = (int)'X';
-        repaint();
+        //board[p.x][p.y] = 'P';
+        Pion.setPosition(p.x,p.y);
+        Pion.displayPion(Pion);
+        //repaint();
       }
     } // fin classe MyMouseListener
   } // fin classe DrawingPanel
