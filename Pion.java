@@ -8,23 +8,25 @@ public class Pion {
   private int melee;
   private int missile;
 */
-  public int[] getPosition(){
+  public int[] getPosition(Pion Pion){
+    int x = Pion.x;
+    int y = Pion.y
     return this.position;
   }
-
+        
   public void setPosition(int x, int y){
     int[] pos = {x,y};
     this.position = pos;
   }
 
 
-  public void displayPion(Pion Pion){
+  public void displayPion(Pion Pion, Graphics g){
     for (int t:Pion.getPosition()){
-       // Ne marche pas
-        /*ImageIcon pion_soldat= new ImageIcon(getClass().getResource("img/pion_soldat.png"));
-        Image img = pion_soldat.getImage();
-        drawHex.g2.drawImage(img,0,0,1300,1000,null);*/
-      System.out.print(t);
+        ImageIcon pion_soldat= new ImageIcon(getClass().getResource("img/pion_soldat.png"));
+        Image imgsold = pion_soldat.getImage();
+        Graphics2D g3 = (Graphics2D)g;
+        //g3.drawImage(imgsold,2,2,100,100,null);
+      System.out.print(Pion.getPosition());
     }
   }
 

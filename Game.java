@@ -125,7 +125,7 @@ public class Game
         // action au clic sur la tuile
         //board[p.x][p.y] = 'P';
         Pion.setPosition(p.x,p.y);
-        Pion.displayPion(Pion);
+        Pion.displayPion(Pion,null);
         //repaint();
       }
     } // fin classe MyMouseListener
