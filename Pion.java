@@ -29,7 +29,7 @@ public class Pion {
     Image imgsold = pion_soldat.getImage();
 
 
-    g2.drawImage(imgsold,2,2,100,100,null);
+    g2.drawImage(imgsold,Pion.getX(),Pion.getY(),100,100,null);
     System.out.print(Pion.getX());
   }
 
