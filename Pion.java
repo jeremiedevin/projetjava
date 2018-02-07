@@ -13,7 +13,7 @@ public class Pion {
     int y = Pion.y
     return this.position;
   }
-        
+
   public void setPosition(int x, int y){
     int[] pos = {x,y};
     this.position = pos;
