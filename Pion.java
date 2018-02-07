@@ -1,6 +1,3 @@
-import javax.swing.*;
-import java.awt.*;
-
 public class Pion {
   private int x;
   private int y;
@@ -22,20 +19,14 @@ public class Pion {
     this.y = y;
   }
 
-
+  /*
+  //deprecated - ancienne version stable
   public void displayPion(Pion Pion){
 
     ImageIcon pion_soldat= new ImageIcon(getClass().getResource("img/pion_soldat.png"));
-    Image imgsold = pion_soldat.getImage();
-
-
-    g2.drawImage(imgsold,Pion.getX(),Pion.getY(),100,100,null);
     System.out.print(Pion.getX());
   }
-
-
-
-
+  */
 
 
 

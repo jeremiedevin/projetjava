@@ -51,9 +51,9 @@ public class Game
       }
     }
 
-    //set up board here
-    board[3][3] = (int)'A';
-    board[4][4] = -(int)'B';
+    // test affichage de case grise
+    //board[3][3] = (int)'A';
+    //board[4][4] = -(int)'B';
   }
 
   private void createAndShowGUI()
@@ -125,8 +125,10 @@ public class Game
         // action au clic sur la tuile
         //board[p.x][p.y] = 'P';
         Pion.setPosition(p.x,p.y);
-        Pion.displayPion(Pion);
-        //repaint();
+
+        initGame();
+        board[Pion.getX()][Pion.getY()] = (int)'X';
+        repaint();
       }
     } // fin classe MyMouseListener
   } // fin classe DrawingPanel
