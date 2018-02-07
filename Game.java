@@ -27,10 +27,10 @@ public class Game
   final static Color COLOURTWO = new Color(0,0,0,200);
   final static Color COLOURTWOTXT = new Color(255,100,255);
   final static int EMPTY = 0;
-  final static int BSIZE = 12; // board size.
-  final static int HEXSIZE = 60;	//hex size in pixels
+  final static int BSIZE = 12; // taille cote.
+  final static int HEXSIZE = 60;	// taille hexa en pixels
   final static int BORDERS = 15;
-  final static int SCRSIZE = HEXSIZE * (BSIZE + 4) + BORDERS*3; //screen size (vertical dimension).
+  final static int SCRSIZE = HEXSIZE * (BSIZE + 4) + BORDERS*3; // taille d'ecran (vertical dimension).
 
   Grille Grille = new Grille();
 
@@ -40,7 +40,7 @@ public class Game
 
   void initGame(){
 
-    Grille.setXYasVertex(false); //recommandation du net : laisser à FALSE.
+    Grille.setXYasVertex(false); //recommandation internet : laisser à FALSE.
 
     Grille.setHeight(HEXSIZE*2);
     Grille.setBorders(BORDERS);
@@ -114,10 +114,7 @@ public class Game
 
     class MyMouseListener extends MouseAdapter	{
       public void mouseClicked(MouseEvent e) {
-        int x = e.getX();
-        int y = e.getY();
-        //mPt.x = x;
-        //mPt.y = y;
+
         Point p = new Point( Grille.pxtoHex(e.getX(),e.getY()) );
 
         if (p.x < 0 || p.y < 0 || p.x >= BSIZE || p.y >= BSIZE) return;
